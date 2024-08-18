@@ -2,12 +2,14 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[][] matrix1 = {{1,2}, {3, 4}};
-        int[][] matrix2 = {{5,6}, {7,8}};
+//        int[][] matrix1 = {{1,2}, {3, 4}};
+//        int[][] matrix2 = {{5,6}, {7,8}};
+        int[][] matrix1 = {{1, 2}, {3, 4}, {5, 6}};
+        int[][] matrix2 = {{7, 8, 9}, {10, 11, 12}};
         multiply(matrix1, matrix2);
     }
 
-    public static void multiply(int[][] matrix1, int[][]matrix2) {
+    public static void multiply(int[][] matrix1, int[][] matrix2) {
         int[][] matrix12 = new int[matrix1.length][matrix1[0].length];
         for (int i = 0; i < matrix12.length; i++) {
             for (int j = 0; j < matrix12[0].length; j++) {
@@ -27,10 +29,10 @@ public class Main {
             col[k] = matrix2[k][j];
         }
         int[] add = new int[matrix2.length];
-        for (int l = 0; l < row.length; l++){
+        for (int l = 0; l < row.length; l++) {
             add[l] = row[l] * col[l];
         }
-        for (int m = 0; m < add.length; m++){
+        for (int m = 0; m < add.length; m++) {
             product += add[m];
         }
         return product;
